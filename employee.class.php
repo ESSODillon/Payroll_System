@@ -21,11 +21,12 @@ abstract class Employee implements Payable
         self::$emp_count++;
     }
 
-    public function getPerson()
+    // Call on this method in test_payable.php to turn the person object into a String. 
+    public function getPerson($first_name, $last_name, $gender, $SSN)
     {
+        $this->person = new Person($first_name, $last_name, $gender, $SSN);
 
-        // The attribute of this class is an object of Person. Idk how to do this???
-        $this->person = new Person();
+        $this->person->toString();
 
         return $this->person;
     }
@@ -47,5 +48,7 @@ abstract class Employee implements Payable
 
     public function toString()
     {
+        echo "<br><strong>Employee ID</strong>: ", $this->getEmpId();
+        echo "<br><strong>Years of Service</strong>: ", $this->getYearOfService();
     }
 }

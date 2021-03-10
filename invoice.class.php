@@ -9,23 +9,23 @@
 class Invoice implements Payable
 {
 
-    private $part_time;
+    private $part_name;
     private $price;
     private $quantity;
     private static $invoice_count = 0;
 
-    public function __construct($part_time, $price, $quantity)
+    public function __construct($part_name, $price, $quantity)
     {
-        $this->part_time = $part_time;
+        $this->part_name = $part_name;
         $this->price = $price;
         $this->quantity = $quantity;
 
         self::$invoice_count++;
     }
 
-    public function getPartTime()
+    public function getPartName()
     {
-        return $this->part_time;
+        return $this->part_name;
     }
 
     public function getPrice()
@@ -51,6 +51,9 @@ class Invoice implements Payable
 
     public function toString()
     {
-        // What needs added here???
+        echo "<br><strong>Part Name</strong>: ", $this->getPartName();
+        echo "<br><strong>Price</strong>: ", $this->getPrice();
+        echo "<br><strong>Quantity</strong>: ", $this->getQuantity();
+        echo "<br><strong>Payment</strong>: ", $this->getPaymentAmount();
     }
 }

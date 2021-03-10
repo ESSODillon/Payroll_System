@@ -43,6 +43,8 @@ class Person
 
     public function toString()
     {
-        // What do I do here??
+        echo "<br><strong>Name</strong>: ", $this->getFirstName(), $this->getLastName();
+        echo "<br><strong>Gender</strong>: ", $this->getGender();
+        echo "<br><strong>Social Security Number: </strong>: ", $this->getSSN();
     }
 }

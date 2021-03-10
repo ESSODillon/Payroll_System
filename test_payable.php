@@ -18,7 +18,13 @@
 <body>
     <?php
 
+    require_once "autoloading.php";
+    echo "<h2>Payroll System Programmed with OOP</h2>";
+    echo "<p>*****************************************************</p>";
 
+    $iv = new Invoice("Samsung Galaxy S11", "$525.29", 1);
+
+    echo "<div>", $iv->toString(), "</div>";
 
     ?>
 </body>
