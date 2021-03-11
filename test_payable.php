@@ -22,9 +22,13 @@
     echo "<h2>Payroll System Programmed with OOP</h2>";
     echo "<p>*****************************************************</p>";
 
-    $iv = new Invoice("Samsung Galaxy S11", "$525.29", 1);
-
+    $iv = new Invoice("Samsung Galaxy S11", 525.29, 1);
     echo "<div>", $iv->toString(), "</div>";
+
+    $iv2 = new Invoice("Stainless Steel Dog Bowl", 9.99, 2);
+    echo "<div>", $iv2->toString(), "</div>";
+    echo "<p>*****************************************************</p>";
+
 
     ?>
 </body>

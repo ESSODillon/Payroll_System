@@ -41,7 +41,9 @@ class Invoice implements Payable
 
     public function getPaymentAmount()
     {
-        // What needs added here??
+        // Calculate the payment through the quantity & price data members
+        $payment = $this->price * $this->quantity;
+        return $payment;
     }
 
     public static function getInvoiceCount()
@@ -52,8 +54,8 @@ class Invoice implements Payable
     public function toString()
     {
         echo "<br><strong>Part Name</strong>: ", $this->getPartName();
-        echo "<br><strong>Price</strong>: ", $this->getPrice();
+        echo "<br><strong>Price</strong>: $", $this->getPrice();
         echo "<br><strong>Quantity</strong>: ", $this->getQuantity();
-        echo "<br><strong>Payment</strong>: ", $this->getPaymentAmount();
+        printf("<br><strong>Payment</strong>: $%.2f", $this->getPaymentAmount());
     }
 }
