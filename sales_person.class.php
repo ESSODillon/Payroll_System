@@ -7,17 +7,17 @@
 */
 
 class SalesPerson extends Employee{
-
+//private attributes of sales person
     private $sales;
     private $commission_rate;
-
+//constructor
     public function __construct($person, $emp_id, $year_of_service, $sales, $commission_rate)
     {
         parent::__construct($person, $emp_id, $year_of_service);
         $this->sales = $sales;
         $this->commission_rate = $commission_rate;
     }
-
+//public get methods
     public function getSales(){
         return $this->sales;
     }
@@ -25,9 +25,10 @@ class SalesPerson extends Employee{
     public function getCommissionRate(){
         return $this->commission_rate;
     }
-
+//calculate payment amount
     public function getPaymentAmount()
     {
+        //multiply sales and commission rate to get payment amount
         return $this->sales * $this->commission_rate;
     }
 
