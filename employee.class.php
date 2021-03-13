@@ -48,6 +48,7 @@ abstract class Employee implements Payable
 
     public function toString()
     {
+        echo $this->getPerson()->toString();
         echo "<br><strong>Employee ID</strong>: ", $this->getEmpId();
         echo "<br><strong>Years of Service</strong>: ", $this->getYearOfService();
     }
