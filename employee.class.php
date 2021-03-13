@@ -24,7 +24,7 @@ abstract class Employee implements Payable
     // Call on this method in test_payable.php to turn the person object into a String. 
     public function getPerson($first_name, $last_name, $gender, $SSN)
     {
-        $this->person = new Person($first_name, $last_name, $gender, $SSN);
+        $this->person = new Person();
 
         $this->person->toString();
 
