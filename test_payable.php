@@ -39,6 +39,15 @@ echo "<div>", $pe1->toString(), "</div>";
 
 $pe2 = new Person("Selena", "Gonzalez", "Female", 306324294);
 echo "<div>", $pe2->toString(), "</div>";
+
+$pe3 = new Person("Pam", "Beesley", "Female", 305567894);
+
+$pe4 = new Person("Isabel", "Poreba", "Female", 309548653);
+
+$pe5 = new Person("Jim", "Halpert", "Male", 342554853);
+
+$pe6 = new Person("Gary", "Scott", "Male", 345258653);
+
 echo "<p>*****************************************************</p>";
 
 /* abstract so cannot be instantiated
@@ -55,39 +64,37 @@ echo "<div>", $em2->toString(), "</div>";
 echo "<p>*****************************************************</p>";
 */
 
-/*
+
 echo "<h2>Testing the nameable interface with the Secretary class hierarchy</h2>";
 echo "<p>*****************************************************</p>";
 
-$se1 = new Secretary("Pam", 38585578, 16, 22.02, 40);
-
-echo "<p>*****************************************************</p>";
-
-
-echo "<h2>Testing the nameable interface with the Manager class hierarchy</h2>";
-echo "<p>*****************************************************</p>";
-
-$ma1 = new Manager("Jim", 38584583, 16,"sales", 80000);
-echo "<div>", $ma1->toString(), "</div>";
+$se1 = new Secretary($pe3, 38585578, 16, 22.02, 40);
+echo "<div>", $se1->toString(), "</div>";
 
 echo "<p>*****************************************************</p>";
 
 echo "<h2>Testing the nameable interface with the SalesPerson class hierarchy</h2>";
 echo "<p>*****************************************************</p>";
 
-$sa1 = new SalesPerson("Isabel", 3584584, 19, 45, 46.20);
+$sa1 = new SalesPerson($pe4, 3584584, 19, 45, 46.20);
 echo "<div>", $sa1->toString(), "</div>";
+
+echo "<h2>Testing the nameable interface with the Manager class hierarchy</h2>";
+echo "<p>*****************************************************</p>";
+
+$ma1 = new Manager($pe5, 38584583, 16,"sales", 80000);
+echo "<div>", $ma1->toString(), "</div>";
 
 echo "<p>*****************************************************</p>";
 
 echo "<h2>Testing the nameable interface with the ExecutiveManager class hierarchy</h2>";
 echo "<p>*****************************************************</p>";
 
-$ex1 = new ExecutiveManager("Michael", 1585489, 19, "sales", 96679, 2000);
+$ex1 = new ExecutiveManager($pe6, 1585489, 19, "sales", 96679, 2000);
 echo "<div>", $ex1->toString(), "</div>";
 
 echo "<p>*****************************************************</p>";
-*/
+
 
 ?>
 </body>
