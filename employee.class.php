@@ -1,51 +1,54 @@
 <?php
 /*
- * Author: Group 5
+ * Author: Dillon Polley
  * Date: 3/13/21
  * Name: employee.class.php
- * Description: 
+ * Description: Abstract base class that creates Employees. Implements the Payable interface.
 */
 abstract class Employee implements Payable
 {
+    // Private data members, and static data member to keep track of how many employees have been made.
     private $person;
     private $emp_id;
     private $year_of_service;
     private static $emp_count = 0;
 
-    public function __construct($person, $emp_id, $year_of_service)
+    // Constructor for the Employee class, also uses composition to create a Person object, adds 1 every time the constructor is called to the static method 
+    public function __construct($first_name, $last_name, $gender, $SSN, $emp_id, $year_of_service)
     {
-        $this->person = $person;
+        $this->person = new Person($first_name, $last_name, $gender, $SSN);
         $this->emp_id = $emp_id;
         $this->year_of_service = $year_of_service;
 
+        // Adds 1 to employee count
         self::$emp_count++;
     }
 
-    // Call on this method in test_payable.php to turn the person object into a String. 
-    public function getPerson($first_name, $last_name, $gender, $SSN)
+    // Getter for the person data member
+    public function getPerson()
     {
-        $this->person = new Person();
-
-        $this->person->toString();
-
         return $this->person;
     }
 
+    // Getter for the employee id data member
     public function getEmpId()
     {
         return $this->emp_id;
     }
 
+    // Getter for the years of service data member
     public function getYearOfService()
     {
         return $this->year_of_service;
     }
 
+    // Getter for the static data member
     public static function getEmpCount()
     {
         return self::$emp_count;
     }
 
+    // Turns all the information above into strings, and can be called later as this is an abstract parent class
     public function toString()
     {
         echo $this->getPerson()->toString();

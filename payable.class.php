@@ -1,6 +1,6 @@
 <?php
 /*
- * Author: Group 5
+ * Author: Dillon Polley
  * Date: 3/13/21
  * Name: payable.class.php
  * Description: Interface class
